@@ -7,13 +7,13 @@ info:
 servers:
   - url: https://x8ki-letl-twmt.n7.xano.io/api:P5HoCQ4a:v1/regions
 
-components:
-  securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
-security:
-  - BasicAuth: []
+#components:
+ # securitySchemes:
+ #   BasicAuth:
+ #     type: http
+ #     scheme: basic
+#security:
+ # - BasicAuth: []
 
 paths:
   /artists:
