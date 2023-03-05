@@ -5,7 +5,7 @@ info:
   description: An API to present my professional information 
 
 servers:
-  - url: https://x8ki-letl-twmt.n7.xano.io/api:P5HoCQ4a:v1/regions
+  - url: https://x8ki-letl-twmt.n7.xano.io/api:P5HoCQ4a
 
 #components:
  # securitySchemes:
