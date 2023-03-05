@@ -16,7 +16,7 @@ servers:
  # - BasicAuth: []
 
 paths:
-  /artists:
+  /regions:
     get:
       description: Returns a list of artists 
       #  ----- Added lines  ----------------------------------------
