@@ -2,52 +2,51 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Tassio's Resume API
-  description: An API to present my professional information 
+  description: An API to present my professional information
 
 servers:
-  - url: https://x8ki-letl-twmt.n7.xano.io/api:P5HoCQ4a
+  - url: https://x8ki-letl-twmt.n7.xano.io/api:hm7hZTrv
 
-#components:
- # securitySchemes:
- #   BasicAuth:
- #     type: http
- #     scheme: basic
-#security:
- # - BasicAuth: []
-
+components:
+  securitySchemes:
+    { bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT } }
+  schemas: {}
 paths:
-  /regions:
-    get:
-      description: Returns a list of artists 
-      #  ----- Added lines  ----------------------------------------
-      responses:
-        '200':
-          description: Successfully returned a list of artists
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  required:
-                    - username
-                  properties:
-                    artist_name:
-                      type: string
-                    artist_genre:
-                      type: string
-                    albums_recorded:
-                      type: integer
-                    username:
-                      type: string
-
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
-      #  ---- /Added lines  ----------------------------------------
+  /personal-info:
+    {
+      get:
+        {
+          summary: "Get Personal Info",
+          description: "Get Personal Info\n<br /><br />\n<b>Authentication:</b> not required",
+          tags: [personal-info],
+          security: [],
+          parameters: [],
+          responses:
+            {
+              200:
+                {
+                  description: Success!,
+                  content:
+                    {
+                      application/json:
+                        { schema: { type: object, properties: {} } },
+                    },
+                },
+              400:
+                {
+                  description: "Input Error. Check the request payload for issues.",
+                },
+              403:
+                {
+                  description: "Access denied. Additional priviledges are needed access the requested resource.",
+                },
+              404:
+                {
+                  description: "Not Found. The requested resource does not exist.",
+                },
+              429: { description: "Rate Limited. Too many requests." },
+              500: { description: "Unexpected error" },
+            },
+        },
+    }
+    #  ---- /Added lines  ----------------------------------------
