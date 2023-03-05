@@ -1,11 +1,11 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: Simple API
-  description: A simple API to illustrate OpenAPI concepts
+  title: Tassio's Resume API
+  description: An API to present my professional information 
 
 servers:
-  - url: https://example.io/v1
+  - url: https://x8ki-letl-twmt.n7.xano.io/api:P5HoCQ4a:v1/regions
 
 components:
   securitySchemes:
