@@ -13,40 +13,29 @@ components:
   schemas: {}
 paths:
   /personal-info:
-    {
-      get:
-        {
-          summary: "Get Personal Info",
-          description: "Get Personal Info\n<br /><br />\n<b>Authentication:</b> not required",
-          tags: [personal-info],
-          security: [],
-          parameters: [],
-          responses:
-            {
-              200:
-                {
-                  description: Success!,
-                  content:
-                    {
-                      application/json:
-                        { schema: { type: object, properties: {} } },
-                    },
-                },
-              400:
-                {
-                  description: "Input Error. Check the request payload for issues.",
-                },
-              403:
-                {
-                  description: "Access denied. Additional priviledges are needed access the requested resource.",
-                },
-              404:
-                {
-                  description: "Not Found. The requested resource does not exist.",
-                },
-              429: { description: "Rate Limited. Too many requests." },
-              500: { description: "Unexpected error" },
-            },
-        },
-    }
-    #  ---- /Added lines  ----------------------------------------
+    get:
+      description: Returns a list of artists 
+      #  ----- Added lines  ----------------------------------------
+      responses:
+        '200':
+          description: Successfully returned Tassio's personal details
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - name
+                    - email
+                  properties:
+                    linkedin_profile:
+                      type: string
+                    phone number:
+                      type: string
+                    email:
+                      type: string
+                    name:
+                      type: string
+                    twitter:
+                      type: string
