@@ -1,0 +1,66 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Tassio's Resume API",
+    "description" : "An API to present my professional information",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://x8ki-letl-twmt.n7.xano.io/api:hm7hZTrv"
+  } ],
+  "paths" : {
+    "/personal-info" : {
+      "get" : {
+        "description" : "Returns Tassio's personal details",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully returned Tassio's personal details",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "required" : [ "email", "name" ],
+        "type" : "object",
+        "properties" : {
+          "linkedin_profile" : {
+            "type" : "string",
+            "description" : "Tassio's LinkedIn URL"
+          },
+          "phone number" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "twitter" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}
